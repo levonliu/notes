@@ -1,0 +1,4 @@
+---
+component: home
+home: true
+---
