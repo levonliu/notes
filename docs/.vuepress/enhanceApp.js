@@ -3,6 +3,7 @@ import home from './pages/Home'
 import php from './components/Notes'
 import javaScript from './components/Notes'
 import server from './components/Notes'
+require('./theme/style/theme.styl')
 
 export default ({
     Vue,

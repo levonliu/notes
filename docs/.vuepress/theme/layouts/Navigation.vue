@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="drawer" fixed clipped app class="light-blue darken-2" dark>
+    <v-navigation-drawer v-model="drawer" fixed clipped app class="purple darken-4" dark>
         <v-list dense>
             <v-list-tile :to="home.link">
                 <v-list-tile-action>
