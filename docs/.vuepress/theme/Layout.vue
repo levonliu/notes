@@ -2,10 +2,12 @@
     <v-app id="inspire">
         <navigation :openStatus.sync="drawer"></navigation>
         <v-content >
-            <v-container fluid >
+            <v-container grid grid-list-lg fluid >
                 <component :is="com"></component>
                 <v-layout justify-center>
-                    <Content/>
+                    <v-flex xs12 >
+                        <Content/>
+                    </v-flex>
                 </v-layout>
             </v-container>
         </v-content>
@@ -29,7 +31,6 @@
             }
         },
         mounted(){
-            // console.log(this.$page)
         },
         components:{
             navigation

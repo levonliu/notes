@@ -9,6 +9,7 @@ module.exports = {
                 icon    : 'icon-notes',
                 children: [
                     {title: 'Server', link: '/notes/server/', icon: 'icon-server'},
+                    {title: 'docker', link: '/notes/docker/', icon: 'icon-server'},
                     {title: 'PHP', link: '/notes/php/', icon: 'icon-php'},
                     {title: 'JavaScript', link: '/notes/javaScript/', icon: 'icon-JavaScript'},
                 ]

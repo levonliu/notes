@@ -1,28 +1,26 @@
 <template>
-    <v-flex xs12 sm6 md4 lg3>
-        <v-card  v-for="item in items" :key="item.link">
-            <v-img class="white--text" height="150px" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
-                <v-container fill-height fluid>
-                    <v-layout fill-height>
-                        <v-flex xs12 align-end flexbox>
-                            <span class="headline">{{item.title}}</span>
-                        </v-flex>
-                    </v-layout>
-                </v-container>
-            </v-img>
-            <v-card-title>
-                <div>
-                    <span>{{item.description}}</span><br>
-                    <span class="grey--text">{{item.date}}</span><br>
+    <v-container grid grid-list-lg fluid>
+        <v-layout wrap row>
+            <v-flex xs12 md12 lg12 v-for="item in items" :key="item.link">
+                <div class="component-item-list" style="width: 100%;">
+                    <v-card>
+                        <v-card-title>
+                            <router-link class="item-title " :to="item.link + '.html'">{{item.title}}</router-link>
+                            <div style="width: 100%">
+                                <span class="grey--text">{{ item.date }}</span>
+                            </div>
+                        </v-card-title>
+                        <v-card-text>
+                            <span>{{ item.description }}</span>
+                        </v-card-text>
+                        <v-card-text>
+                            <v-chip label>Docker Virtual Technology</v-chip>
+                        </v-card-text>
+                    </v-card>
                 </div>
-            </v-card-title>
-            <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn slot="activator" color="lime accent-3" small :to="item.link + '.html'">view</v-btn>
-            </v-card-actions>
-        </v-card>
-    </v-flex>
-
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -35,13 +33,36 @@
         },
         mounted() {
             this.$nextTick(() => {
-                // console.log(this.$site);
-                // console.log(this.$page);
+                console.log(this.$site);
+                console.log(this.$page);
             })
         }
     }
 </script>
 
 <style scoped>
-
+    .item-title{
+        font-size: 26px;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .item-title:hover,
+    .item-title:active,
+    .item-title:after {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    .item-title:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: indigo;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: 0.3s ease-in-out;
+    }
 </style>
